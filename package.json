@@ -1,11 +1,12 @@
 {
   "name": "cook4you",
   "version": "1.0.0",
-  "description": "",
+  "description": "cook4you project",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
