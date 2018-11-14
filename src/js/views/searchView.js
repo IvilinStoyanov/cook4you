@@ -2,7 +2,11 @@ import { elements } from './base';
 
 export const getInput = () => elements.searchInput.value;
 
-const renderRecipe  = recipe => {
+export const clearInput = () => {
+    elements.searchInput.value = '';
+}
+
+const renderRecipe = recipe => {
     const markup = `
     <li>
         <a class="results__link" href="#${recipe.recipe_id}">
@@ -17,8 +21,8 @@ const renderRecipe  = recipe => {
     </li>   
     `;
     elements.searchResList.insertAdjacentHTML('beforeend', markup);
-}
+};
 
 export const renderResult = recipes => {
     recipes.forEach(renderRecipe);
-}
+};
