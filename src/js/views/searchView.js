@@ -4,7 +4,11 @@ export const getInput = () => elements.searchInput.value;
 
 export const clearInput = () => {
     elements.searchInput.value = '';
-}
+};
+
+export const clearResult = () => {
+    elements.searchResList.innerHTML = '';
+};
 
 const renderRecipe = recipe => {
     const markup = `

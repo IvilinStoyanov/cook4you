@@ -21,6 +21,7 @@ const controlSearch = async () => {
 
         // prepare UI for result 
         searchView.clearInput();
+        searchView.clearResult();
 
         // search for recipes
        await state.search.getResult();
