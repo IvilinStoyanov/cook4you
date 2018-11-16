@@ -32,13 +32,22 @@ const controlSearch = async () => {
         // render result on UI
         console.log(state.search.result)
         clearLoader();
-        searchView.renderResult(state.search.result);
+        searchView.renderResults(state.search.result);
     }
 }
 
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
-
 });
+
+
+elements.searchResPages.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-inline');
+    if(btn) {
+        const goToPage = parseInt(btn.dataset.goto, 10);
+        searchView.clearResult();
+        searchView.renderResults(state.search.result, goToPage);
+    }
+})
 
