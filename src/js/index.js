@@ -5,6 +5,7 @@ import FavoriteRecipe from './models/FavoriteRecipe';
 import * as searchView from './views/searchView';
 import * as recipeView from './views/recipeView';
 import * as listView from './views/listView';
+import * as favoriteRecipeView from './views/favoriteRecipeView';
 import { elements, renderLoader, clearLoader } from './views/base';
 
 /** Global state 
@@ -92,7 +93,10 @@ const controlRecipe = async () => {
             // render recipe 
             console.log(state.recipe);
             clearLoader();
-            recipeView.renderRecipe(state.recipe);
+            recipeView.renderRecipe(
+                state.recipe,
+                state.favoriteRecipe.isLiked(id)
+                );
             console.log(state.recipe);
 
         } catch (error) {
@@ -139,6 +143,8 @@ elements.shopping.addEventListener('click', e => {
 /**
  * FAVORITE_RECIPE CONTROLLER
  */
+state.favoriteRecipe = new FavoriteRecipe();
+favoriteRecipeView.toggleLikeMenu(state.favoriteRecipe.getNumLikes());
 const controlfavoriteRecipe = () => {
     if(!state.favoriteRecipe) state.favoriteRecipe = new FavoriteRecipe();
     const currentID = state.recipe.id;
@@ -153,6 +159,7 @@ const controlfavoriteRecipe = () => {
             state.recipe.img
         );
         // toggle the like button
+        favoriteRecipeView.toggleLikeBtn(true);
 
         // add favoriteRecipe to UI list
             console.log(state.favoriteRecipe);
@@ -163,6 +170,7 @@ const controlfavoriteRecipe = () => {
             state.favoriteRecipe.deleteLike(currentID);
             
         // toggle the like button
+        favoriteRecipeView.toggleLikeBtn(false);
 
         // Remove favoriteRecipe from UI list
         console.log(state.favoriteRecipe);  
