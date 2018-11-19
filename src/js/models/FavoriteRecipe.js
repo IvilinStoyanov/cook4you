@@ -1,23 +1,23 @@
 export default class FavoriteRecipe {
     constructor() {
-        this.likes = [];
+        this.favoriteRecipe = [];
     }
 
-    addLike(id, title, author, img) {
+    addFavoriteRecipe(id, title, author, img) {
         const like = { id, title, author, img };
-        this.likes.push(like);
+        this.favoriteRecipe.push(like);
     }
 
     deleteLike(id) {
-        const index = this.likes.findIndex(el => el.id === id);
-        this.likes.splice(index, 1);
+        const index = this.favoriteRecipe.findIndex(el => el.id === id);
+        this.favoriteRecipe.splice(index, 1);
     }
 
     isLiked(id) {
-        return this.likes.findIndex(el => el.id === id) !== -1;
+        return this.favoriteRecipe.findIndex(el => el.id === id) !== -1;
     }
 
     getNumLikes() {
-        return this.likes.length;
+        return this.favoriteRecipe.length;
     }
 }
