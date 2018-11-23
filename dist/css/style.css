@@ -165,13 +165,13 @@ body {
   display: flex; ;
   align-items: center;}
   .banner__container .header__logo {
-    margin-left: 4rem;
-    height: 7rem; }
+    margin-left: 5rem;
+    height: 6rem; }
     .banner__container h3 {
       font-family: 'Indie Flower', cursive;
-      font-size: 4rem;
+      font-size: 3rem;
       margin-left: 1rem;
-      height: 6rem;
+      height: 4rem;
     }
 
 .search {
