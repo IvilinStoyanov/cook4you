@@ -13,33 +13,43 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <title>cook4you - Find the best recipes</title>
-        <!-- Cookie warning -->
-        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-        <script>
-            window.addEventListener("load", function () {
-                window.cookieconsent.initialise({
-                    "palette": {
-                        "popup": {
-                            "background": "#3c404d",
-                            "text": "#d6d6d6"
-                        },
-                        "button": {
-                            "background": "#8bed4f"
-                        }
+    <!-- Cookie warning -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#3c404d",
+                        "text": "#d6d6d6"
                     },
-                    "theme": "classic"
-                })
-            });
-        </script>
+                    "button": {
+                        "background": "#8bed4f"
+                    }
+                },
+                "theme": "classic"
+            })
+        });
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129693869-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-129693869-1');
+    </script>
+
 </head>
 
 <body>
     <div class="container">
         <header class="header">
-            <div class="banner__container">                 
+            <div class="banner__container">
                 <img src="img/logo.png" alt="Logo" class="header__logo">
-                <h3>Cook4You</h3>               
+                <h3>Cook4You</h3>
             </div>
             <form class="search">
                 <input type="text" class="search__field" placeholder="Search over 1,000,000 recipes...">
@@ -461,7 +471,8 @@
 
         </div>
     </div>
-    
-<script type="text/javascript" src="js/bundle.js"></script></body>
+
+    <script type="text/javascript" src="js/bundle.js"></script>
+</body>
 
 </html>
