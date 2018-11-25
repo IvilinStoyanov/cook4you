@@ -51,7 +51,8 @@ body {
   align-items: center;
   transition: all .2s; }
   .btn:hover, .btn-small:hover {
-    transform: scale(1.05); }
+    transform: scale(1.05);
+    background-image: linear-gradient(to right bottom, #9cc7f3, #dfe2e3); }
   .btn:focus, .btn-small:focus {
     outline: none; }
   .btn > *:first-child, .btn-small > *:first-child {
