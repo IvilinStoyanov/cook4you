@@ -130,13 +130,13 @@ body {
   transform: skewY(-3deg); }
 
 .copyright {
-  color: #ebf0f6;
+  color: #9a9c9f;
   font-size: 1.2rem;
   margin-top: auto; }
 
 .link:link,
 .link:visited {
-  color: #ebf0f6; }
+  color: #9a9c9f; }
 
 .loader {
   margin: 5rem auto;
