@@ -157,7 +157,7 @@ body {
 
 .header {
   grid-area: head;
-  background-color: #ebf0f661;
+  background-color: #ebf0f6d6 ;
   display: flex;
   align-items: center;
   justify-content: space-between; }
@@ -312,7 +312,7 @@ body {
     float: right; }
 
 .recipe {
-  background-color: #ebf0f661;
+  background-color: #ebf0f6d6;
   border-top: 1px solid #fff; }
   .recipe__fig {
     height: 30rem;
