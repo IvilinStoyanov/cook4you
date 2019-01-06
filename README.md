@@ -1,3 +1,2 @@
 # Cook4you 
-
-![modern javascript application](http://somaliren.org/wp-content/uploads/2016/04/underdevelopment.jpg)
+#### modern javascript applicaiton using NPM, Webpack, Babel and ES6 modules.
