@@ -7,6 +7,23 @@
   box-sizing: inherit;
 }
 
+
+/* scrollbar on chrome */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  background: #ff7777;
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -97,7 +114,7 @@ body {
 }
 
 .btn-inline {
-  color: #98ccd3;
+  color: #ff7777;
   font-size: 1.2rem;
   border: none;
   background-color: #F9F5F3;
@@ -121,7 +138,7 @@ body {
 }
 
 .btn-inline:hover {
-  color: #5da2e9;
+  color: black;
   background-color: #F2EFEE;
 }
 
@@ -589,7 +606,7 @@ body {
 .shopping__list {
   list-style: none;
   max-height: 77rem;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .shopping__item {
