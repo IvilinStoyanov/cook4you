@@ -38,6 +38,11 @@ const controlSearch = async () => {
     
             // 5) Render results on UI
             clearLoader();
+            console.log(state.search.result.length);
+            // show results list
+            if (state.search.result.length > 0) {
+                document.querySelector('.results').style.display = "inline-block";
+            }
             searchView.renderResults(state.search.result);
         } catch (err) {
             alert('Something wrong with the search...');

@@ -10,7 +10,7 @@
 
 /* scrollbar on chrome */
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -29,7 +29,7 @@ html {
   font-size: 62.5%;
 }
 
-@media only screen and (max-width: 68.75em) {
+@media only screen and (max-width: 760px) {
   html {
     font-size: 50%;
   }
@@ -56,7 +56,7 @@ body {
   grid-template-areas: "head head head" "list recipe shopping"; */
 }
 
-@media only screen and (max-width: 68.75em) {
+@media only screen and (max-width: 760px) {
   .container {
     width: 100%;
     margin: 0;
@@ -325,20 +325,24 @@ body {
 .main-wrapper {
   display: flex;
   flex-direction: row;
+  height: 100vh;
 }
 
-@media only screen and (max-width: 68.75em) {
+@media only screen and (max-width: 760px) {
   .main-wrapper {
+    height: 100%;
     flex-direction: column;
   }
 }
 
 .results {
+  display: none;
+  min-width: 290px;
   overflow: auto;
   white-space: nowrap;
 }
 
-@media only screen and (max-width: 68.75em) {
+@media only screen and (max-width: 760px) {
   .results {
     min-width: 100vh;
   }
@@ -353,7 +357,7 @@ body {
   flex-direction: column;
 }
 
-@media only screen and (max-width: 68.75em) {
+@media only screen and (max-width: 760px) {
   .results__list {
     flex-direction: row;
   }
@@ -367,7 +371,7 @@ body {
   width: 270px;
 }
 
-@media only screen and (max-width: 68.75em) {
+@media only screen and (max-width: 760px) {
   .results__link {
     width: 230px;
   }
@@ -455,7 +459,7 @@ body {
   float: right;
 }
 
-@media only screen and (max-width: 68.75em) {
+@media only screen and (max-width: 760px) {
   .results__btn--prev, .likes__btn--prev {
     position: absolute;
     left: 10px;
@@ -653,8 +657,9 @@ body {
 }
 
 .shopping {
+  display: none;
   padding: 3rem 4rem;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
 }
 
