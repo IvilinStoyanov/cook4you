@@ -326,13 +326,24 @@ body {
 .main-wrapper {
   display: flex;
   flex-direction: row;
-  height: 100vh;
 }
 
 @media only screen and (max-width: 760px) {
   .main-wrapper {
     height: 100%;
     flex-direction: column;
+  }
+
+  .banner__container {
+    display: none;
+  }
+
+  .search {
+    margin-left: 1rem;
+  }
+
+  .likes__field {
+    padding: 0 2rem;
   }
 }
 
@@ -464,20 +475,20 @@ body {
   .results__btn--prev, .likes__btn--prev {
     position: absolute;
     left: 10px;
-    top: 125px;
+    top: 140px;
   }
   .results__btn--next, .likes__btn--next {
     position: absolute;
     right: 10px;
-    top: 125px;
+    top: 140px;
   }
 }
 
 
 .recipe {
   background-color: #ffcfcf;
-  ;
   border-top: 1px solid #fff;
+  width: 100%;
 }
 
 .recipe__fig {
