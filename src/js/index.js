@@ -14,8 +14,48 @@ import { elements, renderLoader, clearLoader } from './views/base';
  * - Shopping list object
  * - Liked recipes
  */
-const state = {};
 
+// default call to the API
+$(document).ready(function () {
+    controlSearch();
+})
+
+function sliderInit() {
+    // slick settings
+    $('.slick').slick({
+        slidesToShow: 6,
+        slidesToScroll: 6,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        pauseOnHover: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            }
+    
+      ]
+    });
+};
+
+const state = {};
 /** 
  * SEARCH CONTROLLER
  */
@@ -35,37 +75,45 @@ const controlSearch = async () => {
         try {
             // 4) Search for recipes
             await state.search.getResults();
-    
+
             // 5) Render results on UI
             clearLoader();
-            console.log(state.search.result.length);
             // show results list
-            if (state.search.result.length > 0) {
-                document.querySelector('.results').style.display = "inline-block";
-            }
             searchView.renderResults(state.search.result);
+            sliderInit();
+        } catch (err) {
+            alert('Something wrong with the search...');
+            clearLoader();
+        }
+    } else {
+        state.search = new Search('pizza');
+
+        // 3) Prepare UI for results
+        searchView.clearInput();
+        searchView.clearResults();
+        renderLoader(elements.searchRes);
+
+        try {
+            // 4) Search for recipes
+            await state.search.getResults();
+
+            // 5) Render results on UI
+            clearLoader();
+            // show results list
+            searchView.renderResults(state.search.result);
+            sliderInit();
         } catch (err) {
             alert('Something wrong with the search...');
             clearLoader();
         }
     }
+    
 }
 
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
 });
-
-
-elements.searchResPages.addEventListener('click', e => {
-    const btn = e.target.closest('.btn-inline');
-    if (btn) {
-        const goToPage = parseInt(btn.dataset.goto, 10);
-        searchView.clearResults();
-        searchView.renderResults(state.search.result, goToPage);
-    }
-});
-
 
 /** 
  * RECIPE CONTROLLER
@@ -93,7 +141,7 @@ const controlRecipe = async () => {
             // Calculate servings and time
             state.recipe.calcTime();
             state.recipe.calcServings();
-    
+
             // Render recipe
             clearLoader();
             recipeView.renderRecipe(
@@ -107,7 +155,7 @@ const controlRecipe = async () => {
         }
     }
 };
- 
+
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
 
 
@@ -137,7 +185,7 @@ elements.shopping.addEventListener('click', e => {
         // Delete from UI
         listView.deleteItem(id);
 
-    // Handle the count update
+        // Handle the count update
     } else if (e.target.matches('.shopping__count-value')) {
         const val = parseFloat(e.target.value, 10);
         state.list.updateCount(id, val);
@@ -167,7 +215,7 @@ const controlLike = () => {
         // Add like to UI list
         likesView.renderLike(newLike);
 
-    // User HAS liked current recipe
+        // User HAS liked current recipe
     } else {
         // Remove like from the state
         state.likes.deleteLike(currentID);
@@ -184,7 +232,7 @@ const controlLike = () => {
 // Restore liked recipes on page load
 window.addEventListener('load', () => {
     state.likes = new Likes();
-    
+
     // Restore likes
     state.likes.readStorage();
 

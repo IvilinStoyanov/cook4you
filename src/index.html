@@ -10,6 +10,10 @@
     <meta name="author" content="Ivilin Stoyanov">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <title>cook4you - Find the best recipes</title>
@@ -72,27 +76,34 @@
             </div>
         </header>
         <!-- results list -->
-
         <div class="main-wrapper">
             <div class="results">
-                <ul class="results__list">
-                </ul>
-                <div class="results__pages">
+                <div class="results__list slick">
                 </div>
             </div>
-            <!-- recipes -->
+        </div>
+        <!-- recipes -->
+        <div class="container-custom">
             <div class="recipe">
             </div>
-            <!-- shopping cart -->
+        </div>
+        <!-- shopping cart -->
 
-        </div>
-        <div class="shopping">
-            <h2 class="heading-2">My Shopping List</h2>
-            <ul class="shopping__list">
-            </ul>
-        </div>
     </div>
+    <div class="shopping">
+        <h2 class="heading-2">My Shopping List</h2>
+        <ul class="shopping__list">
+        </ul>
+    </div>
+    </div>
+
+    <!-- jquery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- slick -->
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="js/bundle.js"></script>
+
 </body>
 
 </html>
