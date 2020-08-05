@@ -62,8 +62,6 @@ body {
 
 .container-custom {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -400,7 +398,6 @@ body {
 }
 
 .results__link:hover, .likes__link:hover {
-  background-color: #F9F5F3;
   transform: translateY(-2px);
 }
 
@@ -498,7 +495,7 @@ body {
   transform: translate(-50%, 20%);
   color: #fff;
   font-weight: 700;
-  font-size: 2.75rem;
+  font-size: 2em;
   text-transform: uppercase;
   width: 70%;
   line-height: 1.95;
