@@ -312,7 +312,7 @@ body {
 .likes__panel {
   position: absolute;
   right: 0;
-  top: 10rem;
+  top: 7.6em;
   z-index: 10;
   padding: 2rem 0;
   width: 34rem;
@@ -348,6 +348,7 @@ body {
 }
 
 .results {
+  border-right: 1px solid #e5e5e5;
   display: none;
   min-width: 290px;
   overflow: auto;
@@ -356,7 +357,9 @@ body {
 
 @media only screen and (max-width: 760px) {
   .results {
-    min-width: 100vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
   }
 }
 
@@ -486,7 +489,6 @@ body {
 
 
 .recipe {
-  background-color: #ffcfcf;
   border-top: 1px solid #fff;
   width: 100%;
 }
@@ -522,9 +524,9 @@ body {
   transform: translate(-50%, 20%);
   color: #fff;
   font-weight: 700;
-  font-size: 2.75rem;
+  font-size: 2rem;
   text-transform: uppercase;
-  width: 70%;
+  width: 90%;
   line-height: 1.95;
   text-align: center;
 }
@@ -533,6 +535,7 @@ body {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   padding: 1.3rem 2rem;
+  border-radius: 3px;
   background-image: linear-gradient(to right bottom, #f3bcbc, #ff7777);;
 }
 
