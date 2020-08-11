@@ -254,6 +254,7 @@ body {
   align-items: center;
   padding-left: 3rem;
   margin-right: 15rem;
+  margin-left: 2em;
   transition: all .3s;
 }
 
@@ -340,13 +341,25 @@ body {
   }
 
   .search {
+    margin: 0 auto !important;
     margin-left: 1rem;
+    margin-right: 0;
+    width: 320px;
   }
 
   .likes__field {
     padding: 0 2rem;
   }
 }
+
+@media only screen and (max-width: 460px) {
+  .search {
+    margin-left: 1rem;
+    margin-right: 0;
+    width: 305px;
+  }
+}
+
 
 .results {
   border-right: 1px solid #e5e5e5;
