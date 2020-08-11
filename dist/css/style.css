@@ -326,6 +326,7 @@ body {
 .main-wrapper {
   display: flex;
   flex-direction: row;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 @media only screen and (max-width: 760px) {
@@ -672,9 +673,8 @@ body {
 }
 
 .shopping {
-  display: none;
   padding: 3rem 4rem;
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
 }
 
@@ -688,7 +688,7 @@ body {
   display: flex;
   align-items: flex-start;
   padding: 1.3rem 0;
-  border-bottom: 1px solid #F2EFEE;
+  border-bottom: 1px solid #e5e5e5;
   position: relative;
 }
 

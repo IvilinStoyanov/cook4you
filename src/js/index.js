@@ -38,7 +38,6 @@ const controlSearch = async () => {
     
             // 5) Render results on UI
             clearLoader();
-            console.log(state.search.result.length);
             // show results list
             if (state.search.result.length > 0) {
                 document.querySelector('.results').style.display = "inline-block";
@@ -102,7 +101,6 @@ const controlRecipe = async () => {
             );
 
         } catch (err) {
-            console.log(err);
             alert('Error processing recipe!');
         }
     }
